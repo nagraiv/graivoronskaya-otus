@@ -1,5 +1,6 @@
 function deepEqual(actual, expected) {
     let result = {
+        // путь к первому несовпадающему свойству
         'path': '',
         'equal': 'unknown',
     };
@@ -12,30 +13,28 @@ function deepEqual(actual, expected) {
                 // при типе object необходимо исследовать значения свойств (null = null уже рассмотрен)
                 // result.equal = 'to explore';
                 const keysActual = Object.keys(actual);
-                let keysExpected = Object.keys(expected);
+                // если в объектах разное количество свойств, то несовпадение найдено
+                if (keysActual.length !== Object.keys(expected).length) {
+                    result.equal = false;
+                    return;
+                }
                 // перебираем все итерируемые свойства объекта actual
-                keysActual.forEach(key => {
-                    // если ранее обнаружено несовпадение, то пропускаем дальнейшие проверки
-                    if (!result.equal) {
-                        return;
-                    }
+                for (let key of keysActual) {
                     result.path = result.path === '' ? key : result.path + '.' + key;
                     // если в expected нет текущего свойства, то фиксируем негативный результат и путь
-                    if (!keysExpected.includes(key)) {
+                    if (!expected.hasOwnProperty(key)) {
                         result.equal = false;
-                        return;
+                        break;
                     }
                     innerRecursion(actual[key], expected[key]);
-                    // если рекурсивное сравнение вложенного объекта дало полное совпадение,
-                    // то вычёркиваем ключ из списка и пути
-                    if (result.equal) {
-                        keysExpected = keysExpected.filter(el => el !== key);
+                    // если рекурсивное сравнение вложенного объекта вернуло ошибку,
+                    // то прерываем дальнейшие проверки
+                    if (!result.equal) {
+                        break;
+                    } else {
+                        // иначе вычёркиваем проверенный путь перед следующей итерацией
                         result.path = result.path.split('.').slice(0, -1).join('.');
                     }
-                });
-                // если мы перебрали все свойства actual, но в expected оказалось больше свойств
-                if (keysExpected.length > 0) {
-                    result.equal = false;
                 }
             } else {
                 // в эту ветку попали случаи, когда типы различны, либо примитивы одного типа с разными значениями
@@ -75,22 +74,27 @@ const obj6 = () => {}
 
 const obj7 = () => {}
 
-const obj8 = true;
+const obj8 = [true, 10, 'string'];
 
-const obj9 = 1;
+const obj9 = [10, 'string', true];
 
 const obj10 = {
     'c': 0,
     'ef': false,
     'a': obj6,
-    'd': [1, 2, 3 ,4 ,5],
+    'd': [1, 2, {'gt': true, 'rew': null}],
 };
 
 const obj11 = {
-    'd': [1, 2, 3],
+    'd': [1, 2, {'gt': true, 'rew': 'null'}],
     'ef': false,
     'a': obj6,
     'c': 0,
 };
 
+const obj12 = [[1, 2, 3, 4], {'string': 'yes', 'number': 7}, [null], {'a': false}];
+const obj13 = [[1, 2, 3, 4], {'string': 'yes', 'number': 0}, {'0': null}, {'a': false}];
+
+deepEqual(obj8, obj9);
 deepEqual(obj10, obj11);
+deepEqual(obj12, obj13);
