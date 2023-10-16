@@ -1,0 +1,14 @@
+{
+  "name": "tree_file_system",
+  "version": "1.0.0",
+  "description": "prints the list of directories and files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "N.Graivoronskaya",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^11.1.0"
+  }
+}
