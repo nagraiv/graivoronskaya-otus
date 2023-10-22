@@ -8,17 +8,19 @@ function makeFileTree(startPath, depth) {
         currentDepth -= 1;
         if (currentDepth > 1) {
             currentLevelObj.name = path.basename(currentPath);
-            currentLevelObj.items = [];
-            try {
-                fs.readdirSync(currentPath).forEach((item, index, array) => {
-                    const nextPath = path.join(currentPath, item);
-                    const nextLevelObj = {};
-                    currentLevelObj.items.push(nextLevelObj);
-                    innerRecursion(nextPath, currentDepth, nextLevelObj);
-                });
-            } catch (e) {
-                // console.log(e);
-                delete currentLevelObj.items;
+            if (fs.statSync(currentPath).isDirectory()) {
+                currentLevelObj.items = [];
+                try {
+                    fs.readdirSync(currentPath).forEach((item, index, array) => {
+                        const nextPath = path.join(currentPath, item);
+                        const nextLevelObj = {};
+                        currentLevelObj.items.push(nextLevelObj);
+                        innerRecursion(nextPath, currentDepth, nextLevelObj);
+                    });
+                } catch (e) {
+                    console.log(e);
+                    delete currentLevelObj.items;
+                }
             }
         } else if (currentDepth === 1) {
             currentLevelObj.name = path.basename(currentPath);
