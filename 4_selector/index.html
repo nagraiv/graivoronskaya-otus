@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/popup.js" defer></script>
+  <script src="scripts/form.js" defer></script>
+
+  <script src="index.js" defer></script>
+
+  <title>practice-1</title>
+</head>
+<body>
+  <div class="container">
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum quam similique tempore voluptate? Ab accusamus, aliquid aperiam architecto, assumenda blanditiis commodi corporis dicta eius eligendi error obcaecati repellendus sit tempore veniam? Animi beatae corporis cupiditate, deleniti ducimus possimus quis repellat sed! Animi asperiores at, blanditiis cumque dolorum, eius fuga illo impedit ipsum itaque laudantium magni mollitia non odio officiis praesentium quod recusandae similique suscipit voluptas? Accusamus aliquid, animi aperiam assumenda deleniti eveniet ex id illum labore minima necessitatibus officia officiis omnis pariatur quaerat quasi qui quis quod recusandae, sint, soluta tempore temporibus totam vel veniam vitae voluptatum. Aperiam culpa explicabo necessitatibus velit. Provident repellat, unde! Asperiores aut commodi deserunt explicabo quia. Accusamus, assumenda at consectetur dolore dolorem doloribus eius enim facilis impedit laborum nihil nostrum quis, ratione reiciendis repellendus, soluta vero. Aliquid animi commodi culpa et explicabo inventore ipsam modi odit placeat porro provident quo, recusandae sunt tenetur velit. Assumenda atque laboriosam natus nihil similique tempore vel. Architecto distinctio quod voluptates! A, animi debitis distinctio dolorem est inventore iusto molestiae nemo, obcaecati officiis placeat praesentium quasi sed, sunt velit. Assumenda aut consectetur dolor doloribus dolorum esse est, excepturi ipsa ipsam magnam obcaecati placeat provident quaerat quas rem sed similique velit?</div>
+    <button type="button" class="popup_open btn btn_usual">Открыть модальное окно</button>
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus ad architecto atque blanditiis consectetur cum deleniti dolores doloribus eius est eum explicabo hic impedit iste laborum laudantium magni minus, modi nam nihil nostrum odit omnis pariatur quae quia quod soluta temporibus vel veritatis. Dolores iste qui rerum tempore voluptatibus! Atque, corporis cum dolore eaque est iste iusto labore natus neque nihil nisi odit placeat qui quis rerum saepe ullam? Aperiam, atque eligendi eos itaque libero magni odio optio pariatur repellat repellendus sunt ut. A alias, consequuntur corporis delectus deleniti dignissimos in ipsum iusto modi nostrum optio repellendus saepe sequi similique, tempora vero, voluptatum? Ad atque commodi eligendi in iusto mollitia nostrum, odit optio praesentium quisquam sint sunt, veniam voluptate. Accusamus ad adipisci assumenda consequuntur culpa cupiditate ducimus eius et ex fuga harum in ipsam iusto magnam molestias neque nesciunt, nulla numquam, officia optio quam quas, reiciendis reprehenderit sapiente sed similique tenetur vero! Ad adipisci aliquid amet assumenda aut, autem consectetur culpa dicta distinctio dolore explicabo fuga id illum itaque iusto molestiae numquam quaerat quam qui quibusdam quis quisquam repellat sint sit tenetur totam ut velit veniam voluptatem voluptates! Ad aliquid amet aperiam beatae blanditiis cumque dolorem ducimus eveniet facere impedit neque quasi qui ratione rem repellat rerum, tenetur vel? Consectetur dicta error et explicabo facilis recusandae totam? Amet cum dolor eos harum id laborum, officiis, omnis perferendis quod repellat repudiandae sunt veniam voluptatibus. Eos error iusto magni mollitia placeat quae quisquam. A accusantium beatae, consequatur dolor, dolorem et facere id ipsum itaque minus nemo, omnis praesentium quaerat quod sint unde voluptas voluptates! Amet at laborum quidem. Amet cupiditate dolore expedita laborum non perspiciatis recusandae. Aliquam aliquid assumenda consectetur deleniti eos et eveniet, exercitationem harum incidunt minus nihil quod, quos sequi voluptatem voluptates? Dolore dolorem in molestiae, praesentium quam quibusdam?</div>
+  </div>
+
+  <div class="veil popup_close none">
+    <div class="popup">
+      <svg class="popup_close cross" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 441 441">
+        <path stroke="#000" d="M220.336 170.564l.353.353.354-.353L390.288 1.318l49.796 49.773-169.269 169.245-.353.354.353.354 169.269 169.245-49.796 49.796-169.245-169.269-.354-.353-.353.353-169.27 169.269-49.748-49.796 169.245-169.245.353-.354-.353-.354L1.318 51.067 51.09 1.318l169.246 169.246z"/>
+      </svg>
+      <h1 class="title">Стать партнёром проекта</h1>
+
+      <form action="#" class="popup_form">
+
+        <div class="wrap">
+          <div class="col-left">
+            <div class="form__item">
+              <label for="name"><span>✱</span> Название организации</label>
+              <input class="form__input-label" type="text" id="name" name="name" placeholder="" required>
+            </div>
+            <div class="form__item">
+              <label for="phone"><span>✱</span> Телефон</label>
+              <input class="form__input-label" type="tel" id="phone" name="phone" placeholder="" required>
+            </div>
+            <div class="form__item">
+              <label for="email"><span>✱</span> E-mail</label>
+              <input class="form__input-label" type="email" id="email" name="email" placeholder="" required>
+            </div>
+          </div>
+
+          <div class="col-right">
+            <div class="form__input-file">
+              <label class="file-label" for="logo"><span>✱</span> Логотип (jpeg, png)</label>
+              <input class="visually-hidden" type="file" id="logo" name="logo" required>
+              <div id="uploaded" >
+<!--                <img class="user_logo" src="#" alt="">-->
+<!--                <div class="img__remove"></div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form__item">
+          <label for="direction"><span>✱</span> Направление</label>
+          <select class="form__input-label" id="direction" name="direction" state="" required>
+            <option value="d1" selected>Экология</option>
+            <option value="d2">Культура</option>
+            <option value="d3">Образование</option>
+            <option value="d4">Другое</option>
+          </select>
+        </div>
+
+        <div class="form__item">
+          <input class="form__input site" type="text" id="site" name="site" placeholder="">
+        </div>
+        <div class="form__item">
+          <input class="form__input vk" type="text" id="vk" name="vk" placeholder="">
+        </div>
+        <div class="form__item">
+          <input class="form__input ok" type="text" id="ok" name="ok" placeholder="">
+        </div>
+        <div class="form__item">
+          <input class="form__input facebook" type="text" id="facebook" name="facebook" placeholder="">
+        </div>
+        <div class="form__item">
+          <input class="form__input instagram" type="text" id="instagram" name="instagram" placeholder="">
+        </div>
+        <div class="form__item">
+          <input class="form__input youtube" type="text" id="youtube" name="youtube" placeholder="">
+        </div>
+        <div class="form__item">
+          <label for="name">Руководитель</label>
+          <input class="form__input-label" type="text" id="chef" name="chef" placeholder="">
+        </div>
+
+        <button type="button" class="btn btn_accent" disabled="disabled">Стать партнёром проекта</button>
+      </form>
+      <div class="cansel">
+        <a href="#" class="popup_close">Отменить</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
