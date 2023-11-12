@@ -1,4 +1,4 @@
-// import { LitElement, css, html } from 'https://cdn.skypack.dev/lit?min';
+import { LitElement, css, html } from 'https://cdn.skypack.dev/lit?min';
 
 // import {html, LitElement} from 'lit';
 

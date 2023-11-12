@@ -1,32 +1,5 @@
 import {LitElement, html} from 'https://cdn.skypack.dev/lit?min';
 // import {LitElement, html} from 'lit';
-// import { MyLeaf } from './MyLeaf';
-
-class MyLeaf extends LitElement {
-    static get properties()  {
-        return {
-            leaf: { type: String },
-            subtree: { type: Object },
-        };
-    }
-
-    constructor() {
-        super();
-        this.leaf = 'default value';
-        this.subtree = [{}];
-    }
-
-    render() {
-        return html`
-    <li>${this.leaf}
-        ${ this.subtree ? this.subtree.map( item => html`<my-tree .tree=${item}></my-tree>`) : '' }
-    </li>
-    `
-    }
-}
-
-window.customElements.define('my-leaf', MyLeaf);
-
 
 export class MyTree extends LitElement {
     static properties = {
@@ -74,4 +47,4 @@ export class MyTree extends LitElement {
     }
 }
 
-customElements.define('my-tree', MyTree);
+window.customElements.define('my-tree', MyTree);
