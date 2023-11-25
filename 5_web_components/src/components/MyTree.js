@@ -1,5 +1,5 @@
-import {LitElement, html} from 'https://cdn.skypack.dev/lit?min';
-// import {LitElement, html} from 'lit';
+// import {LitElement, html} from 'https://cdn.skypack.dev/lit?min';
+import {LitElement, html} from 'lit';
 
 export class MyTree extends LitElement {
     static properties = {
@@ -47,4 +47,3 @@ export class MyTree extends LitElement {
     }
 }
 
-window.customElements.define('my-tree', MyTree);

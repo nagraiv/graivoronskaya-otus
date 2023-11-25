@@ -4,11 +4,16 @@
   "description": "Web components to print a tree structure object",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "author": "N.Graivoronskaya",
   "license": "ISC",
   "dependencies": {
     "lit": "^3.0.2"
+  },
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
   }
 }

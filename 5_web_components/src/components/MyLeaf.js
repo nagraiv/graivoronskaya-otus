@@ -1,6 +1,5 @@
-import { LitElement, css, html } from 'https://cdn.skypack.dev/lit?min';
-
-// import {html, LitElement} from 'lit';
+// import { LitElement, css, html } from 'https://cdn.skypack.dev/lit?min';
+import {html, LitElement} from 'lit';
 
 export class MyLeaf extends LitElement {
     static get properties()  {
@@ -25,4 +24,3 @@ export class MyLeaf extends LitElement {
     }
 }
 
-window.customElements.define('my-leaf', MyLeaf);
