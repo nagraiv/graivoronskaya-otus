@@ -25,7 +25,10 @@ function sortWords(wordsObj) {
 }
 
 (async () => {
-    const readStream = fs.createReadStream(__dirname + '/data/file5.txt', { encoding: 'utf8' });
+    // console.log(process.argv[2]);
+    const filePath = process.argv[2] || '/data/file5.txt';
+
+    const readStream = fs.createReadStream(__dirname + filePath, { encoding: 'utf8' });
     const writeStream = fs.createWriteStream(__dirname + '/data/output.txt', { encoding: 'utf8' });
 
     // читаем по строке, чтобы chunk не разрезал слово
